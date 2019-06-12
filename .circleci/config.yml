@@ -46,7 +46,6 @@ jobs:
       - run:
           name: execute
           command: |
-            env
             pipenv run python fabfile.py
 
       - store_artifacts:
