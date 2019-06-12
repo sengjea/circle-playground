@@ -11,7 +11,7 @@ from time import sleep
 
 event = {
     "what": "Circle CI",
-    "tags": ["test"],
+    "tags": "test",
     "data": "Data sent from CircleCI"
 }
 
