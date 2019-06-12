@@ -48,7 +48,7 @@ jobs:
           name: execute
           command: |
             . venv/bin/activate
-            python test.py
+            python fabfile.py
 
       - store_artifacts:
           path: test-reports
