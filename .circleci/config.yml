@@ -44,6 +44,7 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: execute
+          context: security
           command: |
             . venv/bin/activate
             pipenv run python fabfile.py
