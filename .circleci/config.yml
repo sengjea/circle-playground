@@ -3,6 +3,7 @@
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
 version: 2
+
 jobs:
   build:
     docker:
@@ -44,7 +45,6 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: execute
-          context: security
           command: |
             env
             pipenv run python fabfile.py
@@ -52,3 +52,10 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+workflows:
+  version: 2
+  my-workflow:
+    jobs:
+      - build:
+          context: security
