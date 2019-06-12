@@ -9,5 +9,13 @@ import time
 from fabric.api import *
 from time import sleep
 
-req = requests.post(url=os.environ['URL'], auth=(os.environ['USER'], os.environ['PASS'])) 
+event = {
+    what: "Circle CI",
+    tags: ["test"],
+    data: "Data sent from CircleCI"
+
+
+}
+
+req = requests.post(url="{base}/events/".format(base=os.environ['URL']), json=event, auth=(os.environ['USER'], os.environ['PASS'])) 
 print(req.text)
