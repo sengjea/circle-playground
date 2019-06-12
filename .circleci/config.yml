@@ -46,7 +46,6 @@ jobs:
           name: execute
           context: security
           command: |
-            . venv/bin/activate
             pipenv run python fabfile.py
 
       - store_artifacts:
